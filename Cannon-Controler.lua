@@ -2,8 +2,8 @@
 local SEPARATOR = ";"
 -- ==================
 
-rednet.open("back")
-
+rednet.open("back") --side of the wireless modem
+local Gearshift = peripheral.wrap("back") --side of the sequenced gearshift
 local angle, direction
 
 while true do
@@ -14,6 +14,8 @@ while true do
         angle = tonumber(a)
         direction = tonumber(d)
         print("Angle: " .. angle .. "  Direction: " .. direction)
+        -- ===== Example code =====
+        Gearshift.rotate(angle, direction)
 
 
     end
